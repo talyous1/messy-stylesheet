@@ -252,9 +252,13 @@
     display: none; 
   }
   
+  h1, h2, h3, footer, .card, .hero {
+    color: var(--black);
+    background: none;
+  }
+
   a::after {
     content: " (" attr(href) ")";
-    font-size: var(--font-size-small);
   }
 
 }
