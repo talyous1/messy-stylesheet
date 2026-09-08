@@ -30,7 +30,6 @@ header {
 
 header, .site-header {
   background: var(--maroon);
-  color: var(--white);
   padding: 24px;
 }
 
@@ -116,21 +115,7 @@ button:hover {
   margin: 32px 0;
 }
 
-.card {
-  background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.event-card {
-  background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.speaker-card {
+.card, .event-card, .speaker-card {
   background: var(--white);
   border: 1px solid var(--gray);
   border-radius: 8px;
