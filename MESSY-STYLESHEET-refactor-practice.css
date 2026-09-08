@@ -141,12 +141,14 @@
     color: var(--black);
   }
 
-  .button, .btn {
+  /* Grouped .button and .btn into .button */
+  .button {
     display: inline-block;
     text-decoration: none;
   }
 
-  .button, .btn, button {
+  /* Grouped .button and .btn into .button */
+  .button, button {
     background: var(--maroon);
     color: var(--white);
     padding: 12px 18px;
@@ -155,8 +157,8 @@
     font-weight: bold;
   }
 
+  /* Grouped .button and .btn into .button */
   .button:hover,
-  .btn:hover,
   button:hover {
     background: var(--gold);
     color: var(--black-2);
