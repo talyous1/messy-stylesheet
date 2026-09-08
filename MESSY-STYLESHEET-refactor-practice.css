@@ -162,29 +162,28 @@
     color: var(--black-2);
   }
 
-  .card, .event-card, .speaker-card {
+  /* Grouped .card, .event-card, and .speaker-card into .card */
+  .card {
     background: var(--white);
     border: 1px solid var(--gray);
     border-radius: 8px;
     padding: 20px;
   }
 
-  .card h3,
-  .event-card h3,
-  .speaker-card h3 {
+  /* Grouped .card h3, .event-card h3, and .speaker-card h3 into .card h3 */
+  .card h3 {
     color: var(--maroon);
     margin-top: 0;
   }
 
-  .card a,
-  .event-card a,
-  .speaker-card a {
+    /* Grouped .card a, .event-card a, and .speaker-card a into .card a */
+  .card a {
     color: var(--maroon);
     font-weight: bold;
   }
 
   .callout, .note {
-    background: var(--white-2);
+    background: var(--beige);
     border-left: 6px solid var(--gold);
     padding: 20px;
     margin: 32px 0;
