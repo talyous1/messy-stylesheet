@@ -3,27 +3,72 @@
    tokens, components, utilities, states, and print support.
 */
 
-:root {
-  --white: #ffffff;
-  --black: #222222;
-  --maroon: #8c1d40;
-  --gold: #ffc627;
-  --black-2: #191919;
-  --white-2: #f7f7f7;
-  --gray: #dddddd;
-  --beige: #fff8df;
-  --font-family: Arial, Helvetica, sans-serif;
+@layer base, layout, components, utilities, overrides;
+
+@layer base {
+  :root {
+    --white: #ffffff;
+    --black: #222222;
+    --maroon: #8c1d40;
+    --gold: #ffc627;
+    --black-2: #191919;
+    --white-2: #f7f7f7;
+    --gray: #dddddd;
+    --beige: #fff8df;
+    --font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  form {
+    border: 1px solid var(--gray);
+    padding: 24px;
+    background: var(--white-2);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--black);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  footer {
+    background: var(--black-2);
+    color: var(--white);
+    padding: 24px;
+    margin-top: 48px;
+  }
+
 }
 
-body {
-  margin: 0;
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 1.5;
-}
+@layer layout {
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+  }
 
+  
+
+}
+  
 header {
   color: var(--white);
 }
@@ -60,12 +105,6 @@ header, .site-header {
 .site-header nav ul li a[aria-current="page"] {
   background: var(--gold);
   color: var(--black-2);
-}
-
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 20px;
 }
 
 .hero {
@@ -136,14 +175,7 @@ button:hover {
   font-weight: bold;
 }
 
-.callout {
-  background: var(--white-2);
-  border-left: 6px solid var(--gold);
-  padding: 20px;
-  margin: 32px 0;
-}
-
-.note {
+.callout, .note {
   background: var(--white-2);
   border-left: 6px solid var(--gold);
   padding: 20px;
@@ -155,46 +187,6 @@ button:hover {
   border-left: 6px solid var(--gold);
   padding: 20px;
   margin: 32px 0;
-}
-
-form {
-  border: 1px solid var(--gray);
-  padding: 24px;
-  background: var(--white-2);
-}
-
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: var(--black);
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--gray);
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--gray);
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--gray);
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
 }
 
 input:focus,
@@ -229,22 +221,11 @@ textarea:focus {
   color: var(--maroon);
 }
 
-footer {
-  background: var(--black-2);
-  color: var(--white);
-  padding: 24px;
-  margin-top: 48px;
-}
-
 footer a {
   color: var(--gold);
 }
 
-.text-center {
-  text-align: center;
-}
-
-.center {
+.text-center, .center {
   text-align: center;
 }
 
