@@ -3,7 +3,7 @@
    tokens, components, utilities, states, and print support.
 */
 
-@layer base, layout, components, utilities, overrides;
+@layer base, layout, components, utilities;
 
 @layer base {
   :root {
@@ -83,151 +83,157 @@
   }
 }
   
-header {
-  color: var(--white);
+@layer components {
+  header {
+    color: var(--white);
+  }
+
+  header, .site-header {
+    background: var(--maroon);
+    padding: 24px;
+  }
+
+  .site-header a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .site-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    display: flex;
+    gap: 12px;
+  }
+
+  .site-header nav ul li a {
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+
+  .site-header nav ul li a:hover {
+    background: var(--gold);
+    color: var(--black-2);
+  }
+
+  .site-header nav ul li a[aria-current="page"] {
+    background: var(--gold);
+    color: var(--black-2);
+  }
+
+  .hero {
+    background: var(--white-2);
+    border: 1px solid var(--gray);
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    color: var(--maroon);
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 0 0 16px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: var(--black);
+  }
+
+  .button, .btn {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .button, .btn, button {
+    background: var(--maroon);
+    color: var(--white);
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: 0;
+    font-weight: bold;
+  }
+
+  .button:hover,
+  .btn:hover,
+  button:hover {
+    background: var(--gold);
+    color: var(--black-2);
+  }
+
+  .card, .event-card, .speaker-card {
+    background: var(--white);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .card h3,
+  .event-card h3,
+  .speaker-card h3 {
+    color: var(--maroon);
+    margin-top: 0;
+  }
+
+  .card a,
+  .event-card a,
+  .speaker-card a {
+    color: var(--maroon);
+    font-weight: bold;
+  }
+
+  .callout, .note {
+    background: var(--white-2);
+    border-left: 6px solid var(--gold);
+    padding: 20px;
+    margin: 32px 0;
+  }
+
+  .warning {
+    background: var(--beige);
+    border-left: 6px solid var(--gold);
+    padding: 20px;
+    margin: 32px 0;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 3px solid var(--gold);
+  }
+
+  .section h2 {
+    color: var(--maroon);
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .resource {
+    border: 1px solid var(--gray);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .resource h3 {
+    color: var(--maroon);
+  }
+
+  footer a {
+    color: var(--gold);
+  }
+
 }
 
-header, .site-header {
-  background: var(--maroon);
-  padding: 24px;
-}
+@layer utilities {
+  .text-center, .center {
+    text-align: center;
+  }
 
-.site-header a {
-  color: var(--white);
-  text-decoration: none;
-}
+  .hidden {
+    display: none;
+  }
 
-.site-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0 0 0;
-  display: flex;
-  gap: 12px;
-}
-
-.site-header nav ul li a {
-  color: var(--white);
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-.site-header nav ul li a:hover {
-  background: var(--gold);
-  color: var(--black-2);
-}
-
-.site-header nav ul li a[aria-current="page"] {
-  background: var(--gold);
-  color: var(--black-2);
-}
-
-.hero {
-  background: var(--white-2);
-  border: 1px solid var(--gray);
-  padding: 32px;
-  margin-bottom: 32px;
-}
-
-.hero h1 {
-  color: var(--maroon);
-  font-size: 42px;
-  line-height: 1.1;
-  margin: 0 0 16px;
-}
-
-.hero p {
-  font-size: 18px;
-  color: var(--black);
-}
-
-.button, .btn {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.button, .btn, button {
-  background: var(--maroon);
-  color: var(--white);
-  padding: 12px 18px;
-  border-radius: 4px;
-  border: 0;
-  font-weight: bold;
-}
-
-.button:hover,
-.btn:hover,
-button:hover {
-  background: var(--gold);
-  color: var(--black-2);
-}
-
-.card, .event-card, .speaker-card {
-  background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.card h3,
-.event-card h3,
-.speaker-card h3 {
-  color: var(--maroon);
-  margin-top: 0;
-}
-
-.card a,
-.event-card a,
-.speaker-card a {
-  color: var(--maroon);
-  font-weight: bold;
-}
-
-.callout, .note {
-  background: var(--white-2);
-  border-left: 6px solid var(--gold);
-  padding: 20px;
-  margin: 32px 0;
-}
-
-.warning {
-  background: var(--beige);
-  border-left: 6px solid var(--gold);
-  padding: 20px;
-  margin: 32px 0;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid var(--gold);
-}
-
-.section h2 {
-  color: var(--maroon);
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
-.resource {
-  border: 1px solid var(--gray);
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.resource h3 {
-  color: var(--maroon);
-}
-
-footer a {
-  color: var(--gold);
-}
-
-.text-center, .center {
-  text-align: center;
-}
-
-.hidden {
-  display: none;
 }
 
 @media (max-width: 700px) {
