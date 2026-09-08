@@ -106,18 +106,21 @@
     gap: 12px;
   }
 
-  .site-header nav ul li a {
+  /* Replaced .site-header nav ul li a with .site-header-link */
+  .site-header-link {
     color: var(--white);
     padding: 8px 12px;
     border-radius: 4px;
   }
 
-  .site-header nav ul li a:hover {
+  /* Replaced .site-header nav ul li a with .site-header-link */
+  .site-header-link:hover {
     background: var(--gold);
     color: var(--black-2);
   }
 
-  .site-header nav ul li a[aria-current="page"] {
+  /* Replaced .site-header nav ul li a with .site-header-link */
+  .site-header-link[aria-current="page"] {
     background: var(--gold);
     color: var(--black-2);
   }
@@ -185,7 +188,7 @@
   }
 
   /* Grouped .callout, .note, and .warning into .callout */
-  .callout, .note, .warning {
+  .callout {
     background: var(--beige);
     border-left: 6px solid var(--gold);
     padding: 20px;
