@@ -114,13 +114,7 @@
   }
 
   /* Replaced .site-header nav ul li a with .site-header-link */
-  .site-header-link:hover {
-    background: var(--gold);
-    color: var(--black-2);
-  }
-
-  /* Replaced .site-header nav ul li a with .site-header-link */
-  .site-header-link[aria-current="page"] {
+  .site-header-link:hover, .site-header-link[aria-current="page"] {
     background: var(--gold);
     color: var(--black-2);
   }
@@ -224,7 +218,8 @@
 }
 
 @layer utilities {
-  .text-center, .center {
+ /* Grouped .text-center and .center into .text-center */
+  .text-center {
     text-align: center;
   }
 
@@ -250,4 +245,16 @@
   .site-header nav ul {
     flex-direction: column;
   }
+}
+
+@media print {
+  nav, .hero a { 
+    display: none; 
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: var(--font-size-small);
+  }
+
 }
