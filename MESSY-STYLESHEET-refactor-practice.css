@@ -176,20 +176,14 @@
     margin-top: 0;
   }
 
-    /* Grouped .card a, .event-card a, and .speaker-card a into .card a */
+  /* Grouped .card a, .event-card a, and .speaker-card a into .card a */
   .card a {
     color: var(--maroon);
     font-weight: bold;
   }
 
-  .callout, .note {
-    background: var(--beige);
-    border-left: 6px solid var(--gold);
-    padding: 20px;
-    margin: 32px 0;
-  }
-
-  .warning {
+  /* Grouped .callout, .note, and .warning into .callout */
+  .callout, .note, .warning {
     background: var(--beige);
     border-left: 6px solid var(--gold);
     padding: 20px;
