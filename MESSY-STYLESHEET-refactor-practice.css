@@ -169,8 +169,8 @@
     padding: 20px;
   }
 
-  /* Grouped .card h3, .event-card h3, and .speaker-card h3 into .card h3 */
-  .card h3 {
+  /* Grouped .card h3, .event-card h3, and .speaker-card h3 into .card h3 and turned into class .card-heading */
+  .card-heading {
     color: var(--maroon);
     margin-top: 0;
   }
